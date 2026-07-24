@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Cokot | Premium Homemade Cookies</title>
+    <!-- Google Fonts: Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loader" class="loader-container">
+        <div class="cookie-loader"><i class="fa-solid fa-cookie-bite"></i></div>
+    </div>
+
+    <!-- Navbar -->
+    <header id="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-cookie"></i> Cookies Cokot
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <button id="theme-toggle" title="Toggle Dark Mode"><i class="fa-solid fa-moon"></i></button>
+                <div class="cart-icon" id="cart-icon">
+                    <i class="fa-solid fa-shopping-basket"></i>
+                    <span class="cart-count">0</span>
+                </div>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Shopping Cart Sidebar -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button id="close-cart"><i class="fa-solid fa-times"></i></button>
+        </div>
+        <div class="cart-items" id="cart-items">
+            <!-- Items will be injected here via JS -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="total-price">Rp 0</span>
+            </div>
+            <!-- Checkout to WhatsApp -->
+            <button class="btn-checkout" id="checkout-btn"><i class="fa-brands fa-whatsapp"></i> Checkout via WA</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cart-overlay"></div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero section-padding fade-in">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1>Fresh Homemade Cookies Every Day</h1>
+                <p>Rasakan kelembutan dan renyahnya cookies premium kami, dipanggang setiap hari dengan bahan berkualitas tinggi dan penuh cinta.</p>
+                <a href="#products" class="btn btn-primary">Shop Now <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=800&auto=format&fit=crop" alt="Delicious large cookies">
+            </div>
+        </div>
+    </section>
+
+    <!-- About & Why Choose Us Section -->
+    <section id="about" class="about section-padding fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Story</h2>
+                <p>Kisah di balik setiap gigitan manis Cookie Cokot</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Berawal dari dapur kecil di rumah, Cookie Cokot hadir untuk memberikan kebahagiaan melalui resep rahasia keluarga. Kami percaya bahwa cookies terbaik berawal dari bahan-bahan terbaik dan dedikasi tinggi.</p>
+                </div>
+                <div class="features-grid">
+                    <div class="feature-box">
+                        <i class="fa-solid fa-house"></i>
+                        <h3>Homemade</h3>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fa-solid fa-leaf"></i>
+                        <h3>Fresh Ingredients</h3>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fa-solid fa-truck-fast"></i>
+                        <h3>Fast Delivery</h3>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fa-solid fa-medal"></i>
+                        <h3>Premium Quality</h3>
+                    </div>
+                    <div class="feature-box">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <h3>Secure Payment</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Section -->
+    <section id="products" class="products section-padding bg-light fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Premium Cookies</h2>
+                <p>Pilih varian favoritmu</p>
+            </div>
+            
+            <div class="product-controls">
+                <div class="search-box">
+                    <input type="text" id="search-product" placeholder="Cari cookies...">
+                    <i class="fa-solid fa-search"></i>
+                </div>
+                <div class="filter-buttons" id="filter-buttons">
+                 <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="original">Original</button>
+                <button class="filter-btn" data-filter="Chocolate">Chocolate</button>
+                <button class="filter-btn" data-filter="Red Velvet">Red Velvet</button>
+                <button class="filter-btn" data-filter="Macha">Macha</button>
+                 <button class="filter-btn" data-filter="Marshmallow">Marshmallow</button>
+                </div>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products injected via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section-padding fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>What They Say</h2>
+                <p>Ulasan pelanggan setia Cookie Cokot</p>
+            </div>
+            <div class="testi-grid">
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Cookies Enak Buanget ."</p>
+                    <div class="user">
+                        <img src="foto 1.jpeg" alt="User">
+                        <h4>Sriasih.</h4>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Matcha cookies-nya juara banget! Aroma green tea-nya asli dan nggak terlalu manis. Suka!"</p>
+                    <div class="user">
+                        <img src="foto 2.jpeg" alt="User">
+                        <h4>Bulan.</h4>
+                    </div>
+                </div>
+                <div class="testi-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Pengirimannya cepat dan packaging-nya sangat aman + premium. Cocok banget buat hampers."</p>
+                    <div class="user">
+                        <img src="foto 2.jpeg" alt="User">
+                        <h4>Ratih.</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section-padding bg-light fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Ada pertanyaan atau pesanan khusus? Hubungi kami!</p>
+            </div>
+            <div class="contact-form-container">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" placeholder="Email Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="5" placeholder="Pesan Anda" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Kirim Pesan</button>
+                    <div id="form-message" style="margin-top: 15px; display: none;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3><i class="fa-solid fa-cookie"></i> Cookie Bliss</h3>
+                <p>Menyajikan kebahagiaan dalam setiap gigitan cookies premium sejak 2023.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 Cookie Bliss. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#home" id="back-to-top" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+
+    <script src="script.js"></script>
+</body>
+</html>
